@@ -10,7 +10,7 @@
   text-decoration: none;
 }
 
-main, header {
+.body {
   margin: auto;
   max-width: 1600px;
 }
