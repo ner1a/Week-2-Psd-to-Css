@@ -3,43 +3,36 @@
     --color:#1B0A42;
     --b-color: #4F56F1;
     --p-color:#9A9A9A;
-    --logo-sec-color:#4F56F1;
     --f-family:'Roboto', sans-serif;
     --f-family-h1:'Ramaraja', serif;
 }
 
 *
 {  
-    max-width: 1600px;
-    margin: 0;
     text-decoration: none;
+}
+
+main,header{
+    margin: auto;
+    max-width: 1600px;
+
 }
 
 .header
 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
     font-family: var(--f-family);
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     letter-spacing: 0.02em;
     margin-bottom: 90px;
-    margin-top: 37px;
-    &__left
+    
+    &__navbar,&__sign
     {
-        display: flex;
-        align-items: center;
-    }
-
-    &__navbar
-    {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        display: inline-block;
+        margin-top: 48px;
+        vertical-align: top
     }
   
     &__element
@@ -51,6 +44,7 @@
     &__sign
     {
         margin-right: 70px;
+        float: right;
     }
     
     &__sign-in
@@ -62,17 +56,12 @@
 
 .logo
 {
+    display: inline-block;
     width: 90px;
     height: 40px;
-    font-family: "Circular Std Bold";
-    font-style: normal;
-    font-weight: 900;
-    font-size: 30px;
-    line-height: 160%;
-    letter-spacing: -0.02em;
-    color: #0A1B32;
     margin-right: 100px;
     margin-left: 70px;
+    margin-top: 37px;
 }
 
 .button
@@ -97,7 +86,7 @@
     align-items: center;
     justify-content: flex-end;
     margin-right: 94px;
-   
+    margin-left: 100px;
     &__card
     {
         max-width: 540px;
