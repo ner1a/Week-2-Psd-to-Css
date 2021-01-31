@@ -10,16 +10,17 @@
 *
 {  
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 .body{
     margin: auto;
     max-width: 1600px;
-
 }
 
 .header
 {
+    display: flex;
     position: relative;
     font-family: var(--f-family);
     font-style: normal;
@@ -27,29 +28,49 @@
     font-size: 16px;
     letter-spacing: 0.02em;
     margin-bottom: 90px;
-    
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   
+    &__right{
+        display: inline-flex;
+        flex-direction: column;
+    }
+
     &__navbar,&__sign
     {
-        display: inline-block;
-        margin-top: 48px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 20px;
         vertical-align: top
+    }
+
+    &__navbar{
+        margin-left: 30px;
     }
   
     &__element
     {
-        padding-right: 40px;
         color:var(--color);
+        &:not(:last-of-type){
+            margin-bottom: 20px;
+        }
+        &:first-of-type{margin-top: 30px;}
     }
     
     &__sign
     {
         margin-right: 70px;
         float: right;
+        white-space: nowrap;
+
     }
     
     &__sign-in
     {
-        margin-right: 40px;
+        margin-left: 30px;
+        margin-bottom: 20px;
         color: var(--color);
     }
 }
@@ -59,9 +80,9 @@
     display: inline-block;
     width: 90px;
     height: 40px;
-    margin-right: 100px;
+    margin-right: 40px;
     margin-left: 70px;
-    margin-top: 37px;
+    margin-top: -70px;
 }
 
 .button
@@ -77,21 +98,23 @@
     border: 0px solid var(--b-color);
     border-radius: 6px;
     padding: 18px 31px;
+    white-space: nowrap;
 }
 
 .content
 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    margin-right: 94px;
-    margin-left: 100px;
+    justify-content: center;
+    margin-right: 25px;
+    margin-left: 25px;
     &__card
     {
+        margin-left: 40px;
         max-width: 540px;
-        margin-right: 115px;
-        margin-bottom: 70px;
+        margin-right: 10px;
+        margin-bottom: 100px;
     }
 
     &__title
@@ -99,8 +122,8 @@
         font-family: var(--f-family-h1);
         font-style: normal;
         font-weight: normal;
-        font-size: 72px;
-        line-height: 76px;
+        font-size: 32px;
+        line-height: 32px;
         letter-spacing: 0.02em;
         color: #1B0A42;
         margin: 0;
@@ -111,8 +134,8 @@
         font-family: 'Roboto';
         font-style: normal;
         font-weight: normal;
-        font-size: 20px;
-        line-height: 32px;
+        font-size: 14px;
+        line-height: 19px;
         letter-spacing: 0.02em;
         color: var(--p-color);
         margin-bottom: 60px;
@@ -122,5 +145,105 @@
     &__button
     {
         padding: 20px 31px;
+    }
+
+    &__img{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 576px){
+    .content{
+        
+        &__title{
+            font-size: 52px;
+            line-height: 52px;
+        }
+        
+        &__p{
+            font-size: 17px;
+            line-height: 22px;
+        }
+        
+        &__card{
+            margin-right: 40px;
+            margin-left: unset;
+        }
+    }
+}
+@media screen and (min-width: 878px){
+    .header{
+        flex-direction: row;
+        align-items: unset;
+
+        &__navbar,&__sign{
+            flex-direction: row;
+            align-items: unset;
+            margin-top: 48px;
+        }
+
+        &__sign{
+            margin-top: 30px;
+        }
+        &__sign-in{
+            margin-top: 18px;
+            margin-right: 40px;
+        }
+
+        &__right{
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: unset;
+        }
+
+        &__element
+        {
+            &:not(:last-of-type){
+                margin-right: 40px;
+            }
+            &:first-of-type{margin-top: unset;}
+        }
+    }
+    .logo
+    {
+        display: inline-block;
+        width: 90px;
+        height: 40px;
+        margin-right: 100px;
+        margin-left: 70px;
+        margin-top: 37px;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .content{
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        &__card{
+            margin-bottom: unset;
+        }
+    }
+}
+
+@media screen and (min-width: 1280px){
+    .content{
+        margin-right: 94px;
+        margin-left: 100px;
+
+        &__card{
+            margin-right: 115px;
+            margin-bottom: 70px;
+        }
+        &__title{
+            font-size: 72px;
+            line-height: 76px;
+        }
+        &__p{
+            font-size: 20px;
+            line-height: 32px;
+    
+        }
     }
 }
